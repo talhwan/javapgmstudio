@@ -4,6 +4,7 @@ public class Week5 {
     public static void main(String[] args) {
 
         /*
+
         Scanner in = new Scanner(System.in);	// Scanner 객체 생성
 
         byte a = in.nextByte(); 		// byte 형 입력 및 리턴
