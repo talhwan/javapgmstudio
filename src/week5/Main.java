@@ -17,7 +17,6 @@ public class Main {
         weight = in.nextInt();
 
         bmi = weight / (height * 0.01 * height * 0.01);
-        //bmi = Math.round(10);
         System.out.println("bmi : " + bmi);
 
     }
