@@ -4,10 +4,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Main a = new Main();
-        a.J001();
+        Main pStudio = new Main();
+        pStudio.J001();
     }
     void J001(){
-        System.out.println("test");
+        int height,weight;
+        double bmi;
+        System.out.print("height(cm): ");
+        Scanner in = new Scanner(System.in);
+        height = in.nextInt();
+        System.out.print("weight(kg): ");
+        weight = in.nextInt();
+
+        bmi = weight / (height * 0.01 * height * 0.01);
+        //bmi = Math.round(10);
+        System.out.println("bmi : " + bmi);
+
     }
 }
