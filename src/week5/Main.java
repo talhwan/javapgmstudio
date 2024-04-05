@@ -51,8 +51,10 @@ public class Main {
     void J005(){
         int month,day;
         int tOrder = 0;
+
         /*
         //아예 월별 날짜를 선언해보았음.
+        int[] month_num = {31,28,31,30,31,30,31,31,30,31,30,31};
         //int[] month_num = {31,28,31,30,31,30,31,31,30,31,30,31};
         //각 월별 날짜를 파악해서 배열에 넣음.
         int[] month_num = new int[12];
