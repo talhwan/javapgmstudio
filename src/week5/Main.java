@@ -18,7 +18,6 @@ public class Main {
 
         bmi = weight / (height * 0.01 * height * 0.01);
         System.out.println("bmi : " + bmi);
-
     }
     void J002(){
         double c_degree;
@@ -54,8 +53,11 @@ public class Main {
 
         /*
         //아예 월별 날짜를 선언해보았음.
+        //1
         int[] month_num = {31,28,31,30,31,30,31,31,30,31,30,31};
         //int[] month_num = {31,28,31,30,31,30,31,31,30,31,30,31};
+
+        //2
         //각 월별 날짜를 파악해서 배열에 넣음.
         int[] month_num = new int[12];
         for(int i=0;i<12;i++){
