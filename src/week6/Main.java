@@ -32,6 +32,7 @@ public class Main {
             }
             System.out.println("bmi : " + bmi);
         }
+        System.out.println("total : " + total);
         System.out.println("count : " + people);
     }
 
@@ -118,7 +119,6 @@ public class Main {
         total = in.nextInt();
 
         int[][] arrayHeightWeight = new int[total][2];
-        //Object[][] aArray = new Object[total][4];
         //bmi 소수점 2자리까지 반올림한다음에 100 곱해서 인트로 저장?
         //비만이면 1 아니면 0
         /* {
