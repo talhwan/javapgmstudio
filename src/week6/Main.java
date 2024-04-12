@@ -46,7 +46,8 @@ public class Main {
         System.out.print("total people(number): ");
         total = in.nextInt();
 
-        //int[] arrayHeight1 = {0,0};
+        //
+        //int[] arrayHeight1 = {0,0,0,1};
         int[] arrayHeight = new int[total];
         int[] arrayWeight = new int[total];
         double[] arrayBmi = null;
@@ -55,7 +56,8 @@ public class Main {
         arrayBmi = new double[total];
         arrayIsFat = new boolean[total];
 
-        for(int i=0;i<total;i++){
+        //for(int i=0;i<total;i++){
+        for(int i=0;i<arrayHeight.length;i++){
             System.out.print("height(cm): ");
             arrayHeight[i] = in.nextInt();
             System.out.print("weight(kg): ");
@@ -105,6 +107,8 @@ public class Main {
         }
         System.out.println("total : " + total);
     }
+    
+    //2차원 배열을 선언하여 구해보기
     void J021_2() {
         int total = 0;
         int people = 0;
@@ -114,7 +118,17 @@ public class Main {
         total = in.nextInt();
 
         int[][] arrayHeightWeight = new int[total][2];
-        // = {{0,0},{0,0}};
+        //Object[][] aArray = new Object[total][4];
+        //bmi 소수점 2자리까지 반올림한다음에 100 곱해서 인트로 저장?
+        //비만이면 1 아니면 0
+        /* {
+         {0,0}
+         ,{0,0}
+         ,{0,0}
+         ,{0,0}
+         ,{0,0}
+         };
+         */
         double[] arrayBmi = null;
         boolean[] arrayIsFat = null;
         arrayBmi = new double[total];

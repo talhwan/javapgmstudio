@@ -9,6 +9,7 @@ public class Lecture20240409 {
 
     void Jtest() {
         int num1,num2;
+        int check_num = 7;
         int sum = 0;
         int sum2 = 0;
         System.out.print("시를 입력하세요(0~23) : ");
@@ -25,11 +26,11 @@ public class Lecture20240409 {
             }
             for(int j=0;j<=target_num;j++){
                 String timer = i + "" + j;
-                if(timer.indexOf("3") > -1){
+                if(timer.indexOf(check_num + "") > -1){
                     sum++;
                 }
-                if(i / 10 == 3 || i % 10 ==3
-                || j / 10 == 3 || j % 10 ==3
+                if(i / 10 == check_num || i % 10 ==check_num
+                || j / 10 == check_num || j % 10 ==check_num
                 ){
                     sum2++;
                 }
