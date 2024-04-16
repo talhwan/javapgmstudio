@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Lecture20240416 {
     public static void main(String[] args) {
         Lecture20240416 pStudio = new Lecture20240416();
-        pStudio.digitalClock();
+        //pStudio.digitalClock();
+        pStudio.practice002();
     }
 
     //기본 버젼
@@ -79,5 +80,33 @@ public class Lecture20240416 {
 
         yearMonthDay = Integer.parseInt(sYearMonthDay);
 
+    }
+    void practice002(){
+
+        String str = "1234567890";
+        System.out.println(str);
+
+        String strFirst3 = str.substring(0,3);
+        System.out.println(strFirst3);
+        String strDeleteLast3 = str.substring(0,str.length()-3);
+        System.out.println(strDeleteLast3);
+
+        String strLast3 = str.substring(str.length()-3,str.length());
+        System.out.println(strLast3);
+
+        String tempDate = "2024-04-16";
+        String[] arrayDate = tempDate.split("-");
+        String year = tempDate.substring(0,4);
+        String month = tempDate.substring(5,7);
+        String day = tempDate.substring(8,10);
+        String year1 = arrayDate[0];
+        String month1 = arrayDate[1];
+        String day1 = arrayDate[2];
+
+        String ymd = tempDate.replaceAll("-", "");
+        int intYmd = 20240416;
+        intYmd = Integer.parseInt(ymd);
+
+        ymd = intYmd + "";
     }
 }
