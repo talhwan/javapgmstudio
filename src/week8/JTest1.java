@@ -2,9 +2,9 @@ package week8;
 
 import java.util.Scanner;
 
-public class Main {
+public class JTest1 {
     public static void main(String[] args) {
-        Main pStudio = new Main();
+        JTest1 pStudio = new JTest1();
         pStudio.test3();
     }
 
