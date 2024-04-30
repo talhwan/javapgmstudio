@@ -98,6 +98,7 @@ public class JTest2 {
     }
     void test2(){
         int amount;
+        int count = 0;
         int[] arrayCoin = {500, 100, 50, 10, 1};
         int[] usedCoin = {0, 0, 0, 0, 0};
         Scanner in = new Scanner(System.in);
@@ -106,10 +107,12 @@ public class JTest2 {
         for(int i=0;i<arrayCoin.length;i++){
             usedCoin[i] = amount / arrayCoin[i];
             amount = amount % arrayCoin[i];
+            count += usedCoin[i];
         }
         for(int i=0;i<usedCoin.length;i++){
             System.out.println(arrayCoin[i] + " * " + usedCoin[i]);
         }
+        System.out.println("count : " + count);
     }
     boolean check010(String str){
         boolean returnVal = true;
