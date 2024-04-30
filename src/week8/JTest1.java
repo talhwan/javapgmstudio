@@ -11,6 +11,11 @@ public class JTest1 {
     void test1(){
         int num;
         int sum = 0, max = 0, min = 0;
+        /*
+        min = Integer.MAX_VALUE;
+        max = Integer.MIN_VALUE;
+        */
+        int i_max = 0, i_min = 0;
         double avg;
         System.out.print("num : ");
         Scanner in = new Scanner(System.in);
@@ -26,17 +31,19 @@ public class JTest1 {
             } else {
                 if(max < arrayInt[i]){
                     max = arrayInt[i];
+                    i_max = i;
                 }
                 if(min > arrayInt[i]){
                     min = arrayInt[i];
+                    i_min = i;
                 }
             }
         }
         avg = sum / arrayInt.length;
         System.out.println("sum : " + sum);
         System.out.println("avg : " + avg);
-        System.out.println("max : " + max);
-        System.out.println("min : " + min);
+        System.out.println("max : " + max + "//" + (i_max+1));
+        System.out.println("min : " + min + "//" + (i_min+1));
     }
     String checkWord(String word){
         String returnVal = "s";

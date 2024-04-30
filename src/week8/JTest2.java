@@ -1,11 +1,73 @@
 package week8;
 
 import java.util.Scanner;
+import java.lang.Math;
 
 public class JTest2 {
     public static void main(String[] args) {
         JTest2 pStudio = new JTest2();
-        pStudio.test3();
+        pStudio.java001();
+    }
+
+    void find_max(int[] p){
+        int max = 0, max_i = 0;
+        for(int i = 0; i < p.length; i++){
+            if(max < p[i]){
+                max = p[i];
+                max_i = i;
+            }
+        }
+        max_i++;
+
+        System.out.println("Max: " + max + " (" + max_i + ")");
+    }
+
+    void find_avg(int[] p){
+        int sum = 0;
+        for(int i = 0; i < p.length; i++){
+            sum += p[i];
+        }
+
+        double avg = (1.0) * sum / p.length;
+
+        System.out.println("Average: " + avg);
+    }
+
+    void find_min(int[] p){
+        int min = p[0], min_i = 0;
+        for(int i = 0; i < p.length; i++){
+            if(min > p[i]){
+                min = p[i];
+                min_i = i;
+            }
+        }
+        min_i++;
+
+        System.out.println("Min: " + min + " (" + min_i + ")");
+    }
+
+    void calculate_sum(int[] p){
+        int sum = 0;
+        for(int i = 0; i < p.length; i++){
+            sum += p[i];
+        }
+
+        System.out.println("Sum: " + sum);
+    }
+    void java001(){
+        int num;
+        Scanner input = new Scanner(System.in);
+        num = input.nextInt();
+
+        int[] numbers=  new int[num];
+        for(int i = 0; i < num; i++){
+            numbers[i] = input.nextInt();
+        }
+
+        calculate_sum(numbers);
+        find_avg(numbers);
+        find_max(numbers);
+        find_min(numbers);
     }
 
     void test1(){
@@ -49,8 +111,18 @@ public class JTest2 {
             System.out.println(arrayCoin[i] + " * " + usedCoin[i]);
         }
     }
+    boolean check010(String str){
+        boolean returnVal = true;
+        if(str.startsWith("010")){
+
+        } else {
+            returnVal = false;
+        }
+        return returnVal;
+    }
     boolean checkPhone(String str){
         boolean returnVal = true;
+        returnVal = check010(str);
         String[] arrayPhone = str.split("-");
         if(arrayPhone.length == 3){
             for(int i=0;i<arrayPhone.length;i++){
@@ -70,6 +142,9 @@ public class JTest2 {
         return returnVal;
     }
     boolean checkPhone2(String str){
+        if(!check010(str)){
+            return false;
+        }
         if(str.length() != 13){
             return false;
         }
