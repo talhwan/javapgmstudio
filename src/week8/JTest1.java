@@ -15,6 +15,7 @@ public class JTest1 {
         min = Integer.MAX_VALUE;
         max = Integer.MIN_VALUE;
         */
+        //min = 9999; //9999보다 큰수를 입력했을 경우 => 제대로된 최소값 구하기 어려움
         int i_max = 0, i_min = 0;
         double avg;
         System.out.print("num : ");

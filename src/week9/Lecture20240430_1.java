@@ -1,8 +1,8 @@
 package week9;
 
-public class Lecture20240530_1 {
+public class Lecture20240430_1 {
     public static void main(String[] args) {
-        Lecture20240530_1 pStudio = new Lecture20240530_1();
+        Lecture20240430_1 pStudio = new Lecture20240430_1();
         pStudio.J043();
     }
     void J041(){
