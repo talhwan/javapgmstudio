@@ -12,9 +12,10 @@ public class ListArrayObject {
     //리스트에 추가하기
     public void add(Object o) {
         Object[] new_array = new Object[a_array.length + 1];
-        for(int i=0;i<a_array.length;i++){
+        System.arraycopy(a_array, 0, new_array, 0, a_array.length);
+        /*for(int i=0;i<a_array.length;i++){
             new_array[i] = a_array[i];
-        }
+        }*/
         new_array[a_array.length] = o;
         a_array = new_array;
     }
