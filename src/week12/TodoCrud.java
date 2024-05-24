@@ -3,15 +3,33 @@ package week12;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoCrud implements Icrud{
+public class TodoCrud implements ICrud {
     List<TodoItem> list = new ArrayList<>();
 
     public void create(String title, String content, String date){
         //list.add(new TodoItem(title, content, date));
         create(new TodoItem(title, content, date));
     }
+
+    public int indexTodoItem(TodoItem todoItem){
+        //같은 제목이랑 날짜가 같으면 이거 같은것으로 볼래!
+        int index = -1;
+        for(int i=0;i<list.size();i++){
+            if(todoItem.getTitle().equals(list.get(i).getTitle())
+                    && todoItem.getDate().equals(list.get(i).getDate())
+            ){
+                index = i;
+            }
+        }
+        return index;
+    }
+
     public void create(TodoItem todoItem){
-        list.add(todoItem);
+        //중복 검사 기능을 넣으면 됩니다!
+        int index = indexTodoItem(todoItem);
+        if(index == -1){
+            list.add(todoItem);
+        }
     }
     public void update(int index, String title, String content, String date){
         TodoItem each = list.get(index);
@@ -37,15 +55,7 @@ public class TodoCrud implements Icrud{
         //list.remove(index);
         //list.remove(todoItem);
 
-        //같은 제목이랑 날짜가 같으면 이거 같은것으로 볼래!
-        int index = -1;
-        for(int i=0;i<list.size();i++){
-            if(todoItem.getTitle().equals(list.get(i).getTitle())
-            && todoItem.getDate().equals(list.get(i).getDate())
-            ){
-                index = i;
-            }
-        }
+        int index = indexTodoItem(todoItem);
         if(index > -1){
             list.remove(index);
         }

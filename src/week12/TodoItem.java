@@ -4,6 +4,7 @@ public class TodoItem {
     private String title;
     private String content;
     private String date; //2024-05-21
+    //private String time; // 10:38
 
     public TodoItem(String title, String content, String date) {
         this.title = title;

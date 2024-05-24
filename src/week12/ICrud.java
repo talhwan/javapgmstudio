@@ -1,6 +1,6 @@
 package week12;
 
-public interface Icrud {
+public interface ICrud {
     public void create(String title, String content, String date);
     public void create(TodoItem todoItem);
     public void update(int index, String title, String content, String date);

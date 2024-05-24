@@ -1,10 +1,5 @@
 package week12;
 
-import week11.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         Main pStudio = new Main();
@@ -12,7 +7,7 @@ public class Main {
     }
 
     void iTest(){
-        Icrud a = new TodoCrud();
+        ICrud a = new TodoCrud();
         a.create("제목0", "내용0", "2024-05-21");
         a.create(new TodoItem("제목1", "내용1", "2024-05-21"));
         a.create(new TodoItem("제목2", "내용2", "2024-05-21"));
