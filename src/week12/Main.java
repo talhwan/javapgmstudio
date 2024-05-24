@@ -11,6 +11,7 @@ public class Main {
         a.create("제목0", "내용0", "2024-05-21");
         a.create(new TodoItem("제목1", "내용1", "2024-05-21"));
         a.create(new TodoItem("제목2", "내용2", "2024-05-21"));
+        a.create(new TodoItem("제목4", "내용4", "2024-05-24"));
         a.printThis();
         a.update(0, "11","22", "33");
         a.update(0, new TodoItem("제목001", "내용001", "2024-05-21"));
@@ -18,5 +19,6 @@ public class Main {
         a.printThis();
         a.delete(1);
         a.printThis();
+        a.printThis("2024-05-24");
     }
 }

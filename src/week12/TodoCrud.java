@@ -65,4 +65,30 @@ public class TodoCrud implements ICrud {
             System.out.println(each.toString());
         }
     }
+    public void printThis(String date){
+        //sort를 객체의 date로 하고 같은 날짜일때는 제목 abc 순으로 정렬!
+        for(TodoItem each : list){
+            if(date.equals(each.getDate())){
+                System.out.println(each.toString());
+            }
+        }
+    }
+    public List<TodoItem> listSchedule(String date){
+        List<TodoItem> rlist = new ArrayList<>();
+        for(TodoItem each : list){
+            if(date.equals(each.getDate())){
+                rlist.add(each);
+            }
+        }
+        return rlist;
+    }
+    public int countSchedule(String date){
+        int count = 0;
+        for(TodoItem each : list){
+            if(date.equals(each.getDate())){
+                count++;
+            }
+        }
+        return count;
+    }
 }
