@@ -6,8 +6,11 @@ import java.util.Scanner;
 public class FileIO {
     public void out() {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("fileoutputstream.txt");
-            String word = "source code";
+            //FileOutputStream fileOutputStream = new FileOutputStream("fileoutputstream.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:/workspace/git/javapgmstudio/testout.txt");
+            FileOutputStream fileOutputStream1 = new FileOutputStream("testout.txt");
+            FileOutputStream fileOutputStream2 = new FileOutputStream("./testout.txt");
+            String word = "pgm studio 4th class";
 
             byte b[] = word.getBytes();
             fileOutputStream.write(b);
@@ -84,7 +87,6 @@ public class FileIO {
     public void in4() {
         try{
             File file = new File("test.txt");
-
             Scanner scanner = new Scanner(file);
             int order = 0;
             while (scanner.hasNextLine()) {

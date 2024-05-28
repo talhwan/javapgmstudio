@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Main pStudio = new Main();
-        pStudio.j082();
+        pStudio.j085();
     }
 
     void j081(){
@@ -26,18 +26,17 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e);
         }
-
-        System.out.println(data);
+        System.out.println("text file : " + data);
 
         String[] arrayData = data.split(" ");
         int[] arrayDataInt = new int[arrayData.length];
         for(int i = 0; i < arrayData.length; i++){
-            arrayDataInt[i] = Integer.parseInt(arrayData[i]);
-            /*
             try{
+                arrayDataInt[i] = Integer.parseInt(arrayData[i]);
             } catch(Exception e){
                 System.out.println(e);
             }
+            /*
             */
         }
 
@@ -53,8 +52,8 @@ public class Main {
             }
         }
 
-        System.out.println(max);
-        System.out.println(min);
+        System.out.println("max : " + max);
+        System.out.println("min : " + min);
     }
 
     void j082(){
@@ -77,9 +76,52 @@ public class Main {
 
             double bmi = weight / (height *0.01* height*0.01);
             System.out.println(bmi);
-            if(bmi > 25){
+            if(bmi >= 25){
                 System.out.println("!!! : " + bmi + "// height : " + height + "// weight : " + weight);
             }
         }
+    }
+
+    void j085(){
+        String data = "";
+        try{
+            FileInputStream fileInputStream = new FileInputStream("./src/week13/testj085.txt");
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            int i = 0;
+            while ((i = bufferedInputStream.read()) != -1){
+                data += (char)i + "";
+            }
+            fileInputStream.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.println("text file : " + data);
+
+        int[] arrayNum = {0,0,0,0}; //숫자, 대, 소, 빈칸
+        for(int i=0;i<data.length();i++){
+            int each = data.charAt(i);
+            //System.out.println(each);
+            if(each >= 48 && each <= 57){
+                //숫자
+                arrayNum[0]++;
+            }
+            if(each >= 65 && each <= 90){
+                //대문자
+                arrayNum[1]++;
+            }
+            if(each >= 97 && each <= 122){
+                //소문자
+                arrayNum[2]++;
+            }
+            if(" ".equals(data.substring(i, i+1))){
+                //공백
+                arrayNum[3]++;
+            }
+        }
+        System.out.println("number : " + arrayNum[0]);
+        System.out.println("C Eng : " + arrayNum[1]);
+        System.out.println("S Eng : " + arrayNum[2]);
+        System.out.println("blank : " + arrayNum[3]);
+
     }
 }

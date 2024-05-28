@@ -3,14 +3,14 @@ package week13;
 public class Lecture {
     public static void main(String[] args) {
         Lecture pStudio = new Lecture();
-        pStudio.iTest();
+        pStudio.fileio();
     }
 
-    void iTest(){
+    void fileio(){
         FileIO a = new FileIO();
-        //a.out();
         a.in4();
         /*
+        a.out();
         a.in0();
         a.in1();
         a.in2();
