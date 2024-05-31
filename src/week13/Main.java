@@ -118,6 +118,7 @@ public class Main {
                 arrayNum[3]++;
             }
         }
+        System.out.println("total : " + data.length());
         System.out.println("number : " + arrayNum[0]);
         System.out.println("C Eng : " + arrayNum[1]);
         System.out.println("S Eng : " + arrayNum[2]);
