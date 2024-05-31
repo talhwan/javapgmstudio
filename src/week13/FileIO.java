@@ -12,7 +12,7 @@ public class FileIO {
             FileOutputStream fileOutputStream1 = new FileOutputStream("C:/workspace/git/javapgmstudio/testout.txt");
             FileOutputStream fileOutputStream2 = new FileOutputStream("./testout.txt");
              */
-            String word = "pgm studio class!!";
+            String word = "pgm studio 3rd class!!";
 
             byte b[] = word.getBytes();
             fileOutputStream.write(b);

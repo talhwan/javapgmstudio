@@ -13,8 +13,25 @@ public class Main {
         pStudio.j085();
     }
 
+    String getText(String filepath){
+        String data = "";
+        try{
+            FileInputStream fileInputStream = new FileInputStream(filepath);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            int i = 0;
+            while ((i = bufferedInputStream.read()) != -1){
+                data += (char)i + "";
+            }
+            fileInputStream.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return data;
+    }
+
     void j081(){
         String data = "";
+        /*
         try{
             FileInputStream fileInputStream = new FileInputStream("./src/week13/testj081.txt");
             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
@@ -26,6 +43,8 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e);
         }
+        */
+        data = getText("./src/week13/testj081.txt");
         System.out.println("text file : " + data);
 
         String[] arrayData = data.split(" ");
@@ -46,7 +65,6 @@ public class Main {
             if(arrayDataInt[i] > max){
                 max = arrayDataInt[i];
             }
-
             if(arrayDataInt[i] < min){
                 min = arrayDataInt[i];
             }
@@ -62,6 +80,7 @@ public class Main {
             File file = new File("./src/week13/testj082.txt");
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
+                //System.out.println(scanner.nextLine());
                 String each = scanner.nextLine();
                 dataList.add(each);
             }
@@ -84,6 +103,7 @@ public class Main {
 
     void j085(){
         String data = "";
+        /*
         try{
             FileInputStream fileInputStream = new FileInputStream("./src/week13/testj085.txt");
             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
@@ -95,6 +115,8 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e);
         }
+        */
+        data = getText("./src/week13/testj085.txt");
         System.out.println("text file : " + data);
 
         int[] arrayNum = {0,0,0,0}; //숫자, 대, 소, 빈칸
@@ -123,6 +145,7 @@ public class Main {
         System.out.println("C Eng : " + arrayNum[1]);
         System.out.println("S Eng : " + arrayNum[2]);
         System.out.println("blank : " + arrayNum[3]);
+        System.out.println("etc : " + (data.length() - arrayNum[0] - arrayNum[1] - arrayNum[2] - arrayNum[3]));
 
     }
 }
