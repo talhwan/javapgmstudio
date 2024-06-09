@@ -1,9 +1,17 @@
 package week14;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class MapHashStringObject {
     //필드
     Object[][] a_array;
-
+    /*
+    String[] key;
+    Object[] value;
+    */
     //생성자!
     public MapHashStringObject() {
         a_array = new Object[0][2];
@@ -89,5 +97,20 @@ public class MapHashStringObject {
 
     public int size(){
         return a_array.length;
+    }
+
+    public Set<String> keySet(){
+        Set<String> keySet = new HashSet<String>();
+        for (Object o[] : a_array) {
+            keySet.add(o[0] + "");
+        }
+        return keySet;
+    }
+    public List<Object> values(){
+        List<Object> values = new ArrayList<Object>();
+        for (Object o[] : a_array) {
+            values.add(o[1]);
+        }
+        return values;
     }
 }

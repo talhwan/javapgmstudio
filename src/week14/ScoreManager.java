@@ -58,21 +58,21 @@ public class ScoreManager {
 
     }
 
-    public int getScoreKorToal(){
+    public int getScoreKorTotal(){
         int total = 0;
         for (Score score : scores) {
             total += score.getKor();
         }
         return total;
     }
-    public int getScoreEngToal(){
+    public int getScoreEngTotal(){
         int total = 0;
         for (Score score : scores) {
             total += score.getEng();
         }
         return total;
     }
-    public int getScoreMatToal(){
+    public int getScoreMatTotal(){
         int total = 0;
         for (Score score : scores) {
             total += score.getMat();

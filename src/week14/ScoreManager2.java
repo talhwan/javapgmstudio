@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class ScoreManager2 {
     Map<String, Score> scores;
+    // 키 값은 이름, value 로는 스코어 객체 전체!!
 
     public ScoreManager2() {
         this.scores = new HashMap<>();
@@ -48,6 +49,7 @@ public class ScoreManager2 {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream("./src/week14/scores.txt");
             for (String key : scores.keySet()) {
+                //Score score = scores.get(key);
                 datas += scores.get(key).toString() + "\n";
             }
 
@@ -60,21 +62,26 @@ public class ScoreManager2 {
 
     }
 
-    public int getScoreKorToal(){
+    public int getScoreKorTotal(){
         int total = 0;
+        /*
         for (String key : scores.keySet()) {
             total += scores.get(key).getKor();
         }
+        */
+        for (Score each : scores.values()) {
+            total += each.getKor();
+        }
         return total;
     }
-    public int getScoreEngToal(){
+    public int getScoreEngTotal(){
         int total = 0;
         for (String key : scores.keySet()) {
             total += scores.get(key).getEng();
         }
         return total;
     }
-    public int getScoreMatToal(){
+    public int getScoreMatTotal(){
         int total = 0;
         for (String key : scores.keySet()) {
             total += scores.get(key).getMat();
