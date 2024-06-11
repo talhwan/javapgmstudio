@@ -89,6 +89,7 @@ public class HguParkingManager {
     }
     public void addCar(HguCar each){
         if(containsCar(each)){
+            System.out.println("this car already exist");
         } else {
             if(checkUserId(each.getUserId())){
                 carList.add(each);
@@ -111,6 +112,11 @@ public class HguParkingManager {
         for(HguUser user : userList){
             if((user.getPhone()).equals(each.getPhone())){
                 return true;
+                /*
+                if((user.getName()).equals(each.getName())){
+                    return true;
+                }
+                */
             }
         }
         return false;
@@ -174,11 +180,16 @@ public class HguParkingManager {
                     long diffSec = diff / 1000;
                     long diffMin = diff / (1000 * 60);
 
+                    diffMin = diff / (1000);
+
                     HguOut out = new HguOut(each.getCarNum() + " "
                             + each.getType() + " " + each.getNowDate()
                             + " " + each.getNowTime());
-                    out.setFee(1000);
-                    out.setParkingTime((int)diffMin);
+                    int price = 20;
+                    int minute = (int)diffMin;
+
+                    out.setFee(price * minute);
+                    out.setParkingTime(minute);
 
                     each = out;
                 } catch (Exception e){

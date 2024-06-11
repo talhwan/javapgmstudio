@@ -1,8 +1,8 @@
 package week15;
 
 public class HguOut extends HguInOut{
-    int parkingTime;
-    int fee;
+    int parkingTime; //몇분 주차했는지
+    int fee; //주차 비용
 
     public HguOut(String data) {
         super(data);
